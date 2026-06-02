@@ -146,7 +146,7 @@ Permite registrar y consultar pagos asociados a reservas.
 El sistema sigue el patrón:
 
 * Modelo → lógica y base de datos
-* Vista → interfaz de usuario
+* Vista → interfaz de usuario un diseño minimalista y intuitiva
 * Controlador → gestión de peticiones
 
 ---
