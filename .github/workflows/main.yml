@@ -1,0 +1,26 @@
+name: Validacion de Produccion - QRkata
+
+on:
+  push:
+    branches: [ main, master ] # Se activa cuando subes al main final
+
+jobs:
+  verificar-proyecto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Validar Compilacion (Build)
+        run: npm run build --if-present
+
+      - name: Exito
+        run: echo "¡El proyecto compilo perfectamente y esta listo para produccion!"
